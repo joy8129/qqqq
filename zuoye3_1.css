@@ -1,0 +1,14 @@
+.center{
+	height: 800px;
+}
+.three{
+	float: none;
+	clear: both;
+	width: 100%;
+}
+.one{
+	width: 30%;
+}
+.two{
+	width: 70%;
+}

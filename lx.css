@@ -1,0 +1,129 @@
+@charset "utf-8" 
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "微软雅黑";
+}
+#head,
+#foot,
+#main
+{
+    height: 100px;
+    width: 1200px;
+    /*width: 85%;*/
+    background-color: goldenrod;
+    text-align: center;
+    font-size: 48px;
+    line-height: 100px;
+    margin: 0 auto;
+}
+#head div{/*icon*/
+    display: none;
+    font-size: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: green;
+    float: right;
+    line-height: 30px;
+    margin-top: 35px;
+}
+#head ul{
+    width: 80%;
+}
+#head ul li{
+    width: 20%;
+    float: left;
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+}
+/*这里添加一个选择器，内容为鼠标经过导航文字时文字变成30px*/
+#head ul li:hover{
+	font-size: 30px;
+}
+#main{
+    height: auto;
+    margin: 10px auto;
+  /*将main设置成BFC*/
+  overflow: hidden;
+}
+.left,
+.center,
+.right{
+    height: 600px;
+    line-height: 600px;
+    float: left;
+    width: 20%;
+    background-color: red
+}
+.center{
+    width: 60%;
+    border-left: 10px solid #FFF;
+    border-right: 10px solid #FFF;
+    box-sizing: border-box;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+
+  /*大于1200px显示1200px，小于时显示100%*/
+#head,
+#main,
+#foot{
+	width: 100%;
+}
+}
+
+
+
+@media only screen and (max-width: 980px) and (min-width: 640px) {
+ 
+/*right消失，去掉main右边框，left和center分别为30%和70%*/
+.right{
+	display: none;
+}
+
+
+.left{
+	width: 30%;
+}
+.center{
+	width: 70%;
+	border-right: none;
+}
+}
+
+
+
+@media only screen and (max-width: 640px) {
+/*从上到下的顺序为：head，left，center，right和footer，
+left和right高为200px，center为600px，main背景变为
+
+白色，去掉导航文字，显示head中icon*/
+.left,
+.center,
+.right{
+width: 100%;
+display: block;
+height: 200px;
+line-height: 200px;
+}
+.center{
+	width: 100%;
+	border:none;
+	margin: 10px auto;
+	height: 600px;
+	line-height: 600px;
+	background-color: yellow;
+}
+#main{
+	background-color: white;
+}
+#head ul{
+	display: none;
+}
+#head div{
+	display: block;
+}
+}
